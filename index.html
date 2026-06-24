@@ -248,6 +248,61 @@
     html.dark .text-gray-500 {
       color: #c0c0c0 !important;
     }
+
+    /* Стили для сворачиваемых виджетов */
+    .collapse-btn {
+      background: none;
+      border: 1px solid #c0c0c0;
+      padding: 0.3rem 1rem;
+      border-radius: 0px;
+      font-weight: 500;
+      font-size: 0.75rem;
+      cursor: pointer;
+      color: #1a1a1a;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: #ffffff;
+    }
+    html.dark .collapse-btn {
+      background: #1a1a1a;
+      border-color: #555555;
+      color: #f0f0f0;
+    }
+    .collapse-btn:hover {
+      background: #000000;
+      color: #ffffff;
+      border-color: #000000;
+    }
+    html.dark .collapse-btn:hover {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+    }
+    .widget-content {
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+      overflow: hidden;
+      max-height: 1500px; /* Достаточно большая высота */
+      opacity: 1;
+    }
+    .widget-content.collapsed {
+      max-height: 0;
+      opacity: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .widget-container {
+      margin-top: 1.5rem;
+      border: 1px solid #e5e5e5;
+      background: #fdfdfd;
+    }
+    html.dark .widget-container {
+      background: #0f0f0f;
+      border-color: #2a2a2a;
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -483,6 +538,34 @@
         </div>
       </div>
     </div>
+
+    <!-- Хакатоны и Сертификаты (Сворачиваемые виджеты) -->
+    <div class="card p-6 mb-8">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-4 border-b border-gray-200 dark:border-gray-800 pb-2">
+        <h2 class="text-xl font-bold flex items-center gap-2">
+          <i class="fas fa-trophy text-2xl text-black dark:text-white"></i> 
+          <span>Хакатоны и Сертификаты</span>
+        </h2>
+        <button onclick="toggleWidgets()" id="toggleWidgetsBtn" class="collapse-btn">
+          <i class="fas fa-chevron-down" id="toggleIcon"></i>
+          <span id="toggleText">Свернуть</span>
+        </button>
+      </div>
+      
+      <!-- Контейнер с виджетами -->
+      <div id="widgetsContainer" class="widget-content">
+        <div class="widget-container p-4 mb-4">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7254970674920755200" height="1278" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
+        </div>
+        <div class="widget-container p-4 mb-4">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7249170124388061185" height="1278" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
+        </div>
+        <div class="widget-container p-4">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7252018226279108608" height="1278" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
+        </div>
+      </div>
+    </div>
+
     <footer class="text-sm text-gray-500 dark:text-gray-500 border-t border-gray-300 dark:border-gray-800 pt-8 mt-4 flex flex-col md:flex-row justify-between items-start gap-3">
       <p data-i18n="footer_updated">Updated by Bogdan Gavrilets — 03/04/26. Built to be clear and remembered.</p>
       <div class="flex gap-5">
@@ -499,7 +582,7 @@
       ru: {
         header_subtitle: "Creative Producer · Screenwriter · Project Manager · Product Lead · AI & Digital Strategy",
         desired_role: "Руководитель проекта / Creative Producer",
-        salary: "225 000 ₽",
+        salary: "180 000 ₽",
         salary_note: "на руки",
         job_type: "Санкт-Петербург",
         work_format: "Удалённо / Гибрид / Офис",
@@ -751,6 +834,24 @@
     function toggleTheme() {
       document.documentElement.classList.toggle('dark');
     }
+
+    // Функция для сворачивания/разворачивания виджетов
+    function toggleWidgets() {
+      const container = document.getElementById('widgetsContainer');
+      const icon = document.getElementById('toggleIcon');
+      const text = document.getElementById('toggleText');
+      
+      container.classList.toggle('collapsed');
+      
+      if (container.classList.contains('collapsed')) {
+        icon.className = 'fas fa-chevron-right';
+        text.textContent = 'Развернуть';
+      } else {
+        icon.className = 'fas fa-chevron-down';
+        text.textContent = 'Свернуть';
+      }
+    }
+
     setLang('ru');
   </script>
 </body>
