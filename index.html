@@ -539,32 +539,33 @@
       </div>
     </div>
 
-    <!-- Хакатоны и Сертификаты (Сворачиваемые виджеты) -->
-    <div class="card p-6 mb-8">
-      <div class="flex flex-wrap items-center justify-between gap-4 mb-4 border-b border-gray-200 dark:border-gray-800 pb-2">
-        <h2 class="text-xl font-bold flex items-center gap-2">
-          <i class="fas fa-trophy text-2xl text-black dark:text-white"></i> 
-          <span data-i18n="achievements_title">Хакатоны и Сертификаты (только с VPN)</span>
-        </h2>
-<button onclick="toggleWidgets()" id="toggleWidgetsBtn" class="collapse-btn">
-  <i class="fas fa-chevron-right" id="toggleIcon"></i>
-  <span id="toggleText">Развернуть</span>
-        </button>
-      </div>
-      
-      <!-- Контейнер с виджетами -->
-      <div id="widgetsContainer" class="widget-content">
-        <div class="widget-container p-4 mb-4">
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7254970674920755200" height="1278" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
-        </div>
-        <div class="widget-container p-4 mb-4">
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7249170124388061185" height="1278" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
-        </div>
-        <div class="widget-container p-4">
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7252018226279108608" height="1278" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
-        </div>
-      </div>
+
+<!-- Хакатоны и Сертификаты (Сворачиваемые виджеты) -->
+<div class="card p-6 mb-8">
+  <div class="flex flex-wrap items-center justify-between gap-4 mb-4 border-b border-gray-200 dark:border-gray-800 pb-2">
+    <h2 class="text-xl font-bold flex items-center gap-2">
+      <i class="fas fa-trophy text-2xl text-black dark:text-white"></i> 
+      <span data-i18n="achievements_title">Хакатоны и Сертификаты (открывается только с VPN)</span>
+    </h2>
+    <button onclick="toggleWidgets()" id="toggleWidgetsBtn" class="collapse-btn">
+      <i class="fas fa-chevron-right" id="toggleIcon"></i>
+      <span id="toggleText">Развернуть</span>
+    </button>
+  </div>
+  
+  <!-- Контейнер с виджетами - теперь изначально свёрнут -->
+  <div id="widgetsContainer" class="widget-content collapsed">
+    <div class="widget-container p-4 mb-4">
+      <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7254970674920755200" height="878" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
     </div>
+    <div class="widget-container p-4 mb-4">
+      <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7249170124388061185" height="878" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
+    </div>
+    <div class="widget-container p-4">
+      <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7252018226279108608" height="878" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
+    </div>
+  </div>
+</div>
 
     <footer class="text-sm text-gray-500 dark:text-gray-500 border-t border-gray-300 dark:border-gray-800 pt-8 mt-4 flex flex-col md:flex-row justify-between items-start gap-3">
       <p data-i18n="footer_updated">Updated by Bogdan Gavrilets — 25/06/26. Built to be clear and remembered.</p>
