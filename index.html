@@ -20,7 +20,7 @@
     }
     html.dark body {
       background: #0a0a0a;
-      color: #f5f5f5; /* был #e8e8e8 — теперь ярче */
+      color: #f5f5f5;
     }
     h1, h2, h3, .font-bold, .font-extrabold {
       font-family: 'Inter', 'Helvetica Neue', sans-serif;
@@ -74,7 +74,7 @@
     }
     html.dark .tag {
       background: #1f1f1f;
-      color: #f0f0f0; /* был #dddddd — теперь белее */
+      color: #f0f0f0;
       border-color: #444444;
     }
     .job-badge {
@@ -88,7 +88,7 @@
     }
     html.dark .job-badge {
       background: #1f1f1f;
-      color: #f0f0f0; /* был #e0e0e0 — теперь ярче */
+      color: #f0f0f0;
       border-color: #4a4a4a;
     }
     a {
@@ -102,7 +102,7 @@
       border-bottom: 1px solid #999999;
     }
     html.dark a {
-      color: #f0f0f0; /* был #dddddd — теперь ярче */
+      color: #f0f0f0;
     }
     html.dark a:hover {
       color: #ffffff;
@@ -124,7 +124,7 @@
     html.dark .lang-switcher button, html.dark .theme-btn {
       background: #1a1a1a;
       border-color: #555555;
-      color: #f0f0f0; /* был #e0e0e0 — теперь ярче */
+      color: #f0f0f0;
     }
     .lang-switcher button.active {
       background: #000000;
@@ -171,7 +171,7 @@
       color: #2c2c2c;
     }
     html.dark i, html.dark .fas, html.dark .fab {
-      color: #d0d0d0; /* был #b0b0b0 — теперь светлее */
+      color: #d0d0d0;
     }
     button i, .theme-btn i {
       color: currentColor;
@@ -189,7 +189,7 @@
       color: #1a1a1a !important;
     }
     html.dark .text-amber-500, html.dark .text-amber-600, html.dark .text-amber-700, html.dark .text-amber-800 {
-      color: #f5f5f5 !important; /* был #e0e0e0 — теперь ярче */
+      color: #f5f5f5 !important;
     }
     .hover\:text-amber-600:hover {
       color: #555555 !important;
@@ -204,7 +204,6 @@
       border-color: #d4d4d4 !important;
     }
     
-    /* ===== ДОПОЛНИТЕЛЬНОЕ ПРАВИЛО: все тексты в карточках и списках в тёмной теме ===== */
     html.dark p,
     html.dark li,
     html.dark .card p,
@@ -231,7 +230,6 @@
       color: #ffffff !important;
     }
     
-    /* Ссылки внутри текста в карточках */
     html.dark .card a:not(.accent-bg):not(.theme-btn) {
       color: #ffffff !important;
       border-bottom-color: #888888;
@@ -242,14 +240,12 @@
       border-bottom-color: #ffffff;
     }
     
-    /* Даты и мелкий текст */
     html.dark .text-sm.font-normal,
     html.dark .text-gray-400,
     html.dark .text-gray-500 {
       color: #c0c0c0 !important;
     }
 
-    /* Стили для сворачиваемых виджетов */
     .collapse-btn {
       background: none;
       border: 1px solid #c0c0c0;
@@ -285,7 +281,7 @@
     .widget-content {
       transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
       overflow: hidden;
-      max-height: 1500px; /* Достаточно большая высота */
+      max-height: 3000px;
       opacity: 1;
     }
     .widget-content.collapsed {
@@ -539,33 +535,32 @@
       </div>
     </div>
 
-
-<!-- Хакатоны и Сертификаты (Сворачиваемые виджеты) -->
-<div class="card p-6 mb-8">
-  <div class="flex flex-wrap items-center justify-between gap-4 mb-4 border-b border-gray-200 dark:border-gray-800 pb-2">
-    <h2 class="text-xl font-bold flex items-center gap-2">
-      <i class="fas fa-trophy text-2xl text-black dark:text-white"></i> 
-      <span data-i18n="achievements_title">Хакатоны и Сертификаты (открывается только с VPN)</span>
-    </h2>
-    <button onclick="toggleWidgets()" id="toggleWidgetsBtn" class="collapse-btn">
-      <i class="fas fa-chevron-right" id="toggleIcon"></i>
-      <span id="toggleText">Развернуть</span>
-    </button>
-  </div>
-  
-  <!-- Контейнер с виджетами - теперь изначально свёрнут -->
-  <div id="widgetsContainer" class="widget-content collapsed">
-    <div class="widget-container p-4 mb-4">
-      <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7254970674920755200" height="878" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
+    <!-- Хакатоны и Сертификаты (Сворачиваемые виджеты) -->
+    <div class="card p-6 mb-8">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-4 border-b border-gray-200 dark:border-gray-800 pb-2">
+        <h2 class="text-xl font-bold flex items-center gap-2">
+          <i class="fas fa-trophy text-2xl text-black dark:text-white"></i> 
+          <span data-i18n="achievements_title">Хакатоны и Сертификаты (открывается только с VPN)</span>
+        </h2>
+        <button onclick="toggleWidgets()" id="toggleWidgetsBtn" class="collapse-btn">
+          <i class="fas fa-chevron-right" id="toggleIcon"></i>
+          <span id="toggleText">Развернуть</span>
+        </button>
+      </div>
+      
+      <!-- Контейнер с виджетами - теперь изначально свёрнут -->
+      <div id="widgetsContainer" class="widget-content collapsed">
+        <div class="widget-container p-4 mb-4">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7254970674920755200" height="878" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
+        </div>
+        <div class="widget-container p-4 mb-4">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7249170124388061185" height="878" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
+        </div>
+        <div class="widget-container p-4">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7252018226279108608" height="878" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
+        </div>
+      </div>
     </div>
-    <div class="widget-container p-4 mb-4">
-      <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7249170124388061185" height="878" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
-    </div>
-    <div class="widget-container p-4">
-      <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7252018226279108608" height="878" width="504" frameborder="0" allowfullscreen="" title="Embedded post" style="max-width: 100%; width: 100%;"></iframe>
-    </div>
-  </div>
-</div>
 
     <footer class="text-sm text-gray-500 dark:text-gray-500 border-t border-gray-300 dark:border-gray-800 pt-8 mt-4 flex flex-col md:flex-row justify-between items-start gap-3">
       <p data-i18n="footer_updated">Updated by Bogdan Gavrilets — 25/06/26. Built to be clear and remembered.</p>
@@ -654,7 +649,7 @@
         ave_desc1: "Разработка сценариев для digital и креативных проектов студии, работающей с motion design, 3D и бренд-видео.",
         ave_desc2: "Создание концептов и сторителлинга для визуально сложных рекламных и художественных кампаний.",
         ave_desc3: "Адаптация сценариев под визуальный язык проекта: от драматургии до структуры под анимацию и CGI.",
-        ave_desc4: "Работа в креативной связке с арт-дирекцией, дизайнерами и моушн-командами на этапе разработки и продакшна."
+        ave_desc4: "Работа в креативной связке с арт-дирекцией, дизайнерами и моушн-командами на этапе разработки и продакшна.",
         achievements_title: "Хакатоны и Сертификаты (открывается только с VPN)"
       },
       en: {
@@ -731,7 +726,7 @@
         ave_desc1: "Script development for digital and creative projects of the studio working with motion design, 3D and brand video.",
         ave_desc2: "Creating concepts and storytelling for visually complex advertising and artistic campaigns.",
         ave_desc3: "Adapting scripts to the project's visual language: from dramaturgy to structure for animation and CGI.",
-        ave_desc4: "Working in creative partnership with art direction, designers and motion teams during development and production."
+        ave_desc4: "Working in creative partnership with art direction, designers and motion teams during development and production.",
         achievements_title: "Hackathons and Certificates (VPN required)"
       },
       es: {
@@ -808,7 +803,7 @@
         ave_desc1: "Desarrollo de guiones para proyectos digitales y creativos del estudio que trabaja con motion design, 3D y video de marca.",
         ave_desc2: "Creación de conceptos y storytelling para campañas publicitarias y artísticas visualmente complejas.",
         ave_desc3: "Adaptación de guiones al lenguaje visual del proyecto: desde la dramaturgia hasta la estructura para animación y CGI.",
-        ave_desc4: "Trabajo en conjunto creativo con dirección de arte, diseñadores y equipos de motion durante la fase de desarrollo y producción."
+        ave_desc4: "Trabajo en conjunto creativo con dirección de arte, diseñadores y equipos de motion durante la fase de desarrollo y producción.",
         achievements_title: "Hackathons y Certificados (solo con VPN)"
       }
     };
@@ -839,20 +834,22 @@
       document.documentElement.classList.toggle('dark');
     }
 
-    // Функция для сворачивания/разворачивания виджетов
+    // Исправленная функция для сворачивания/разворачивания виджетов
     function toggleWidgets() {
       const container = document.getElementById('widgetsContainer');
       const icon = document.getElementById('toggleIcon');
       const text = document.getElementById('toggleText');
       
-      container.classList.toggle('collapsed');
-      
       if (container.classList.contains('collapsed')) {
-        icon.className = 'fas fa-chevron-right';
-        text.textContent = 'Развернуть';
-      } else {
+        // Разворачиваем
+        container.classList.remove('collapsed');
         icon.className = 'fas fa-chevron-down';
-        text.textContent = 'Свернуть';
+        if (text) text.textContent = 'Свернуть';
+      } else {
+        // Сворачиваем
+        container.classList.add('collapsed');
+        icon.className = 'fas fa-chevron-right';
+        if (text) text.textContent = 'Развернуть';
       }
     }
 
